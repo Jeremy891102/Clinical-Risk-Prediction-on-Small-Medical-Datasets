@@ -1,10 +1,4 @@
 ## Comparing Classical and Modern ML Methods for Clinical Risk Prediction on Small Medical Datasets
-
-**Team:** [Person A] & [Person B]  
-**Track:** Applications  
-**Proposal due:** March 31, 2026  
-**Paper due:** May 8, 2026  
-
 ---
 
 ## Project Structure
