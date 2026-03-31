@@ -1,0 +1,22 @@
+# DS-GA 1003 Final Project Dependencies
+# Install: pip install -r requirements.txt
+
+# Data
+ucimlrepo
+openml
+scikit-learn>=1.4
+
+# Models
+xgboost
+catboost
+tabpfn
+
+# Analysis + Visualization
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+
+# Optional: for nice tables
+tabulate
