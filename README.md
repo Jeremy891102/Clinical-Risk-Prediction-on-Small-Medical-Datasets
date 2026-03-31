@@ -1,4 +1,3 @@
-# DS-GA 1003 Final Project
 ## Comparing Classical and Modern ML Methods for Clinical Risk Prediction on Small Medical Datasets
 
 **Team:** [Person A] & [Person B]  
