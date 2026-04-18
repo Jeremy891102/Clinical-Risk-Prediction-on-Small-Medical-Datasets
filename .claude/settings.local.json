@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p src/data src/models src/evaluation experiments tests results)",
+      "Bash(touch results/.gitkeep)",
+      "Bash(pip install:*)",
+      "Bash(python:*)"
+    ]
+  }
+}
