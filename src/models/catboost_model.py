@@ -21,3 +21,10 @@ class CatBoostModel(BaseModel):
 
     def predict_proba(self, X) -> np.ndarray:
         return self.model.predict_proba(X)
+
+    def get_param_grid(self) -> dict:
+        return {
+            "iterations": [100, 300, 500],
+            "depth": [4, 6, 8],
+            "learning_rate": [0.03, 0.1, 0.3],
+        }

@@ -21,3 +21,10 @@ class SVMModel(BaseModel):
 
     def predict_proba(self, X) -> np.ndarray:
         return self.model.predict_proba(X)
+
+    def get_param_grid(self) -> dict:
+        return {
+            "C": [0.1, 1.0, 10.0, 100.0],
+            "gamma": ["scale", 0.01, 0.1, 1.0],
+            "kernel": ["rbf"],
+        }

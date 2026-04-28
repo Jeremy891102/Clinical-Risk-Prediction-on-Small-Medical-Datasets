@@ -21,3 +21,10 @@ class RandomForestModel(BaseModel):
 
     def predict_proba(self, X) -> np.ndarray:
         return self.model.predict_proba(X)
+
+    def get_param_grid(self) -> dict:
+        return {
+            "n_estimators": [100, 300, 500],
+            "max_depth": [None, 5, 10, 20],
+            "min_samples_split": [2, 5],
+        }

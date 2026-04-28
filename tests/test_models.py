@@ -42,3 +42,17 @@ def test_model_fit_predict(model_name):
     proba = model.predict_proba(X_synth)
     assert proba.shape == (100, 2)
     np.testing.assert_allclose(proba.sum(axis=1), 1.0, atol=1e-6)
+
+
+@pytest.mark.parametrize("model_name", list(MODEL_REGISTRY.keys()))
+def test_param_grid_format(model_name):
+    """Verify get_param_grid returns a dict and all values are non-empty lists."""
+    model = MODEL_REGISTRY[model_name]()
+    grid = model.get_param_grid()
+    assert isinstance(grid, dict)
+    for key, values in grid.items():
+        assert isinstance(key, str), f"{model_name}: param name {key} must be string"
+        assert isinstance(values, list), (
+            f"{model_name}: values for {key} must be list, got {type(values)}"
+        )
+        assert len(values) > 0, f"{model_name}: empty value list for {key}"

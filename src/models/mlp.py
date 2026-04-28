@@ -22,3 +22,10 @@ class MLPModel(BaseModel):
 
     def predict_proba(self, X) -> np.ndarray:
         return self.model.predict_proba(X)
+
+    def get_param_grid(self) -> dict:
+        return {
+            "hidden_layer_sizes": [(32,), (64,), (64, 32), (128, 64)],
+            "alpha": [0.0001, 0.001, 0.01],
+            "learning_rate_init": [0.001, 0.01],
+        }

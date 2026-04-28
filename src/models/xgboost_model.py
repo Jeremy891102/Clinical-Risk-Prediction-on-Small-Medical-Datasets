@@ -22,3 +22,11 @@ class XGBoostModel(BaseModel):
 
     def predict_proba(self, X) -> np.ndarray:
         return self.model.predict_proba(X)
+
+    def get_param_grid(self) -> dict:
+        return {
+            "n_estimators": [100, 300, 500],
+            "max_depth": [3, 6, 10],
+            "learning_rate": [0.01, 0.1, 0.3],
+            "subsample": [0.8, 1.0],
+        }

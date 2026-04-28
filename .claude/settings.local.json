@@ -4,7 +4,14 @@
       "Bash(mkdir -p src/data src/models src/evaluation experiments tests results)",
       "Bash(touch results/.gitkeep)",
       "Bash(pip install:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(pytest tests/test_models.py -v -k tabpfn)",
+      "Bash(PYTHONPATH=. pytest tests/test_models.py -v -k tabpfn)",
+      "Bash(gtimeout 30 python -c ' *)",
+      "Bash(TABPFN_TOKEN='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiOTYzNDQyNjctMzcwYi00MjRlLThmZGEtY2JiMjk4MTcyZmNmIiwiZXhwIjoxODA4NzY3MTcxfQ.VqwDZ0lOX6T0MZaDvHj496BM8mro0j6n1SsETfbjX9Q' python *)",
+      "Bash(PYTHONPATH=. pytest tests/ -v)",
+      "Bash(PYTHONPATH=. pytest tests/test_nested_cv.py -v)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
