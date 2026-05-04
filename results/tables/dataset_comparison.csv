@@ -1,0 +1,6 @@
+dataset,n_samples,n_features,n_numeric,n_categorical,positive_rate,majority_pct,missing_pct
+heart,303,13,13,0,0.4587,0.5413,0.0015
+pima,768,8,8,0,0.349,0.651,0.0
+breast_cancer,569,30,30,0,0.6274,0.6274,0.0
+liver,583,10,9,1,0.7136,0.7136,0.0007
+ckd,400,24,14,10,0.625,0.625,0.1054
