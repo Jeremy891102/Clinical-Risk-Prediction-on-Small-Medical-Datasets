@@ -21,6 +21,7 @@ tabpfn==7.1.1, so we explicitly pin v2.5 here for reproducibility and
 to keep the synthetic-vs-real distinction crystal clear in filenames.
 See https://github.com/PriorLabs/TabPFN.
 """
+from __future__ import annotations
 
 import numpy as np
 
