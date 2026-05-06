@@ -11,7 +11,22 @@
       "Bash(TABPFN_TOKEN='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiOTYzNDQyNjctMzcwYi00MjRlLThmZGEtY2JiMjk4MTcyZmNmIiwiZXhwIjoxODA4NzY3MTcxfQ.VqwDZ0lOX6T0MZaDvHj496BM8mro0j6n1SsETfbjX9Q' python *)",
       "Bash(PYTHONPATH=. pytest tests/ -v)",
       "Bash(PYTHONPATH=. pytest tests/test_nested_cv.py -v)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'task 5: document HP grid sizes for all 7 models *)",
+      "Bash(python scripts/task1_friedman_cd.py)",
+      "Read(//tmp/**)",
+      "Bash(command -v sips)",
+      "Bash(sips -s format png results/figures/cd_diagram_auroc.pdf --out /tmp/cd_auroc.png)",
+      "Bash(sips -s format png results/figures/cd_diagram_brier.pdf --out /tmp/cd_brier.png)",
+      "Bash(git commit -m 'task 1: Friedman + Nemenyi post-hoc + CD diagrams \\(AUROC, Brier\\) *)",
+      "Bash(git commit *)",
+      "Bash(sips -s format png results/figures/reliability_heart.pdf --out /tmp/rel_heart.png)",
+      "Bash(sips -s format png results/figures/reliability_pima.pdf --out /tmp/rel_pima.png)",
+      "Bash(sips -s format png results/figures/liver_error_overlap_heatmap.pdf --out /tmp/liver_heatmap.png)",
+      "Bash(sips -s format png results/figures/liver_class_dist.pdf --out /tmp/liver_classdist.png)",
+      "Bash(pytest tests/test_nested_cv.py -q)",
+      "Bash(python3 *)"
     ]
   }
 }

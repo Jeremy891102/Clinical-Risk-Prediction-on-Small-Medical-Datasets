@@ -74,8 +74,15 @@ def run_nested_cv(
     inner_folds: int = 5,
     output_dir: Path = Path("results/raw"),
     verbose: bool = True,
+    param_grid_override: dict | None = None,
+    grid_label: str = "full",
 ) -> dict:
-    """Nested CV for one (model, dataset) pair. Saves JSON; returns the same dict."""
+    """Nested CV for one (model, dataset) pair. Saves JSON; returns the same dict.
+
+    If `param_grid_override` is given, it replaces the wrapper's get_param_grid()
+    for this run only (e.g. to use a reduced grid in multi-seed studies). The
+    label is recorded in the saved JSON under `grid_label` for downstream filtering.
+    """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     out_path = output_dir / f"{dataset_name}_{model_name}_seed{seed}.json"
@@ -85,7 +92,7 @@ def run_nested_cv(
 
     wrapper = get_model(model_name)
     estimator = wrapper.get_estimator()
-    raw_grid = wrapper.get_param_grid()
+    raw_grid = param_grid_override if param_grid_override is not None else wrapper.get_param_grid()
     param_grid = {f"classifier__{k}": v for k, v in raw_grid.items()}
 
     outer = StratifiedKFold(n_splits=outer_folds, shuffle=True, random_state=seed)
@@ -145,6 +152,8 @@ def run_nested_cv(
         "seed": seed,
         "outer_folds": outer_folds,
         "inner_folds": inner_folds,
+        "grid_label": grid_label,
+        "param_grid": raw_grid,
         "fold_results": fold_results,
         "aggregate": _aggregate(fold_results),
         "total_time_sec": round(time.perf_counter() - t_start, 2),
