@@ -1,0 +1,1343 @@
+STARTING SAMPLE ABLATION
+[2026-05-06 15:27:23] datasets=['heart', 'pima', 'breast_cancer', 'liver', 'ckd']
+[2026-05-06 15:27:23] models=['logistic_regression', 'svm', 'random_forest', 'mlp', 'xgboost', 'catboost', 'tabpfn']
+[2026-05-06 15:27:23] fractions=[0.1, 0.25, 0.5, 1.0]  seeds=[0, 1, 42]
+[2026-05-06 15:27:23] available RAM: 4.07 GB (total 18.0 GB)
+[2026-05-06 15:27:23] estimated total runtime: 1759 s = 29.3 min = 0.49 h
+[2026-05-06 15:27:23] best HPs (mode across 10 outer folds):
+              heart / logistic_regression    : {'C': 0.01, 'penalty': 'l2'}
+              heart / svm                    : {'C': 0.1, 'gamma': 0.01, 'kernel': 'rbf'}
+              heart / random_forest          : {'max_depth': 5, 'min_samples_split': 2, 'n_estimators': 300}
+              heart / mlp                    : {'alpha': 0.0001, 'hidden_layer_sizes': (64,), 'learning_rate_init': 0.01}
+              heart / xgboost                : {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 300, 'subsample': 0.8}
+              heart / catboost               : {'depth': 4, 'iterations': 100, 'learning_rate': 0.03}
+              heart / tabpfn                 : (zero-shot / no HP)
+               pima / logistic_regression    : {'C': 0.1, 'penalty': 'l2'}
+               pima / svm                    : {'C': 10.0, 'gamma': 0.01, 'kernel': 'rbf'}
+               pima / random_forest          : {'max_depth': 5, 'min_samples_split': 2, 'n_estimators': 300}
+               pima / mlp                    : {'alpha': 0.0001, 'hidden_layer_sizes': (128, 64), 'learning_rate_init': 0.01}
+               pima / xgboost                : {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 300, 'subsample': 0.8}
+               pima / catboost               : {'depth': 4, 'iterations': 100, 'learning_rate': 0.1}
+               pima / tabpfn                 : (zero-shot / no HP)
+      breast_cancer / logistic_regression    : {'C': 0.1, 'penalty': 'l2'}
+      breast_cancer / svm                    : {'C': 10.0, 'gamma': 0.01, 'kernel': 'rbf'}
+      breast_cancer / random_forest          : {'max_depth': 5, 'min_samples_split': 5, 'n_estimators': 300}
+      breast_cancer / mlp                    : {'alpha': 0.0001, 'hidden_layer_sizes': (64,), 'learning_rate_init': 0.01}
+      breast_cancer / xgboost                : {'learning_rate': 0.3, 'max_depth': 3, 'n_estimators': 300, 'subsample': 1.0}
+      breast_cancer / catboost               : {'depth': 4, 'iterations': 500, 'learning_rate': 0.1}
+      breast_cancer / tabpfn                 : (zero-shot / no HP)
+              liver / logistic_regression    : {'C': 1.0, 'penalty': 'l2'}
+              liver / svm                    : {'C': 10.0, 'gamma': 0.01, 'kernel': 'rbf'}
+              liver / random_forest          : {'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 300}
+              liver / mlp                    : {'alpha': 0.001, 'hidden_layer_sizes': (64, 32), 'learning_rate_init': 0.01}
+              liver / xgboost                : {'learning_rate': 0.01, 'max_depth': 10, 'n_estimators': 500, 'subsample': 0.8}
+              liver / catboost               : {'depth': 8, 'iterations': 300, 'learning_rate': 0.03}
+              liver / tabpfn                 : (zero-shot / no HP)
+                ckd / logistic_regression    : {'C': 1.0, 'penalty': 'l2'}
+                ckd / svm                    : {'C': 0.1, 'gamma': 'scale', 'kernel': 'rbf'}
+                ckd / random_forest          : {'max_depth': None, 'min_samples_split': 2, 'n_estimators': 100}
+                ckd / mlp                    : {'alpha': 0.0001, 'hidden_layer_sizes': (128, 64), 'learning_rate_init': 0.001}
+                ckd / xgboost                : {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 500, 'subsample': 1.0}
+                ckd / catboost               : {'depth': 4, 'iterations': 100, 'learning_rate': 0.03}
+                ckd / tabpfn                 : (zero-shot / no HP)
+[2026-05-06 15:27:23] loading datasets...
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+[2026-05-06 15:27:33]   heart/logistic_regression/frac=0.1/seed=0: k=5 n_sub=30 AUROC=0.8111  (0.0s)
+[2026-05-06 15:27:33]   heart/logistic_regression/frac=0.1/seed=1: k=5 n_sub=30 AUROC=0.9556  (0.1s)
+[2026-05-06 15:27:33]   heart/logistic_regression/frac=0.1/seed=42: k=5 n_sub=30 AUROC=0.8000  (0.0s)
+[2026-05-06 15:27:33]   heart/logistic_regression/frac=0.25/seed=0: k=5 n_sub=75 AUROC=0.8813  (0.0s)
+[2026-05-06 15:27:33]   heart/logistic_regression/frac=0.25/seed=1: k=5 n_sub=75 AUROC=0.9167  (0.0s)
+[2026-05-06 15:27:34]   heart/logistic_regression/frac=0.25/seed=42: k=5 n_sub=75 AUROC=0.8056  (0.0s)
+[2026-05-06 15:27:34]   heart/logistic_regression/frac=0.5/seed=0: k=5 n_sub=151 AUROC=0.8980  (0.0s)
+[2026-05-06 15:27:34]   heart/logistic_regression/frac=0.5/seed=1: k=5 n_sub=151 AUROC=0.9012  (0.0s)
+[2026-05-06 15:27:34]   heart/logistic_regression/frac=0.5/seed=42: k=5 n_sub=151 AUROC=0.8863  (0.0s)
+[2026-05-06 15:27:34]   heart/logistic_regression/frac=1.0/seed=0: k=10 n_sub=303 AUROC=0.9098  (0.0s)
+[2026-05-06 15:27:34]   heart/logistic_regression/frac=1.0/seed=1: k=10 n_sub=303 AUROC=0.9034  (0.0s)
+[2026-05-06 15:27:34]   heart/logistic_regression/frac=1.0/seed=42: k=10 n_sub=303 AUROC=0.9063  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.1/seed=0: k=5 n_sub=30 AUROC=0.2111  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.1/seed=1: k=5 n_sub=30 AUROC=0.0444  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.1/seed=42: k=5 n_sub=30 AUROC=0.1778  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.25/seed=0: k=5 n_sub=75 AUROC=0.8778  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.25/seed=1: k=5 n_sub=75 AUROC=0.7835  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.25/seed=42: k=5 n_sub=75 AUROC=0.8197  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.5/seed=0: k=5 n_sub=151 AUROC=0.8943  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.5/seed=1: k=5 n_sub=151 AUROC=0.8913  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=0.5/seed=42: k=5 n_sub=151 AUROC=0.8845  (0.0s)
+[2026-05-06 15:27:34]   heart/svm/frac=1.0/seed=0: k=10 n_sub=303 AUROC=0.9106  (0.1s)
+[2026-05-06 15:27:34]   heart/svm/frac=1.0/seed=1: k=10 n_sub=303 AUROC=0.9064  (0.1s)
+[2026-05-06 15:27:34]   heart/svm/frac=1.0/seed=42: k=10 n_sub=303 AUROC=0.9050  (0.1s)
+[2026-05-06 15:27:35]   heart/random_forest/frac=0.1/seed=0: k=5 n_sub=30 AUROC=0.6972  (0.8s)
+[2026-05-06 15:27:36]   heart/random_forest/frac=0.1/seed=1: k=5 n_sub=30 AUROC=0.9778  (0.9s)
+[2026-05-06 15:27:37]   heart/random_forest/frac=0.1/seed=42: k=5 n_sub=30 AUROC=0.7778  (0.8s)
+[2026-05-06 15:27:37]   heart/random_forest/frac=0.25/seed=0: k=5 n_sub=75 AUROC=0.8525  (0.8s)
+[2026-05-06 15:27:38]   heart/random_forest/frac=0.25/seed=1: k=5 n_sub=75 AUROC=0.9026  (0.8s)
+[2026-05-06 15:27:39]   heart/random_forest/frac=0.25/seed=42: k=5 n_sub=75 AUROC=0.7802  (0.8s)
+[2026-05-06 15:27:40]   heart/random_forest/frac=0.5/seed=0: k=5 n_sub=151 AUROC=0.8773  (0.8s)
+[2026-05-06 15:27:41]   heart/random_forest/frac=0.5/seed=1: k=5 n_sub=151 AUROC=0.8869  (0.8s)
+[2026-05-06 15:27:42]   heart/random_forest/frac=0.5/seed=42: k=5 n_sub=151 AUROC=0.8825  (0.8s)
+[2026-05-06 15:27:43]   heart/random_forest/frac=1.0/seed=0: k=10 n_sub=303 AUROC=0.9130  (1.7s)
+[2026-05-06 15:27:45]   heart/random_forest/frac=1.0/seed=1: k=10 n_sub=303 AUROC=0.9068  (1.8s)
+[2026-05-06 15:27:47]   heart/random_forest/frac=1.0/seed=42: k=10 n_sub=303 AUROC=0.9096  (1.7s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.1/seed=0: k=5 n_sub=30 AUROC=0.6278  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.1/seed=1: k=5 n_sub=30 AUROC=0.8778  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.1/seed=42: k=5 n_sub=30 AUROC=0.7111  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.25/seed=0: k=5 n_sub=75 AUROC=0.8524  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.25/seed=1: k=5 n_sub=75 AUROC=0.8810  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.25/seed=42: k=5 n_sub=75 AUROC=0.8233  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.5/seed=0: k=5 n_sub=151 AUROC=0.8454  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.5/seed=1: k=5 n_sub=151 AUROC=0.8576  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=0.5/seed=42: k=5 n_sub=151 AUROC=0.8744  (0.0s)
+[2026-05-06 15:27:47]   heart/mlp/frac=1.0/seed=0: k=10 n_sub=303 AUROC=0.8892  (0.2s)
+[2026-05-06 15:27:47]   heart/mlp/frac=1.0/seed=1: k=10 n_sub=303 AUROC=0.8856  (0.2s)
+[2026-05-06 15:27:48]   heart/mlp/frac=1.0/seed=42: k=10 n_sub=303 AUROC=0.9125  (0.2s)
+[2026-05-06 15:27:48]   heart/xgboost/frac=0.1/seed=0: k=5 n_sub=30 AUROC=0.7417  (0.7s)
+[2026-05-06 15:27:49]   heart/xgboost/frac=0.1/seed=1: k=5 n_sub=30 AUROC=0.9556  (0.5s)
+[2026-05-06 15:27:49]   heart/xgboost/frac=0.1/seed=42: k=5 n_sub=30 AUROC=0.7778  (0.5s)
+[2026-05-06 15:27:50]   heart/xgboost/frac=0.25/seed=0: k=5 n_sub=75 AUROC=0.8241  (0.6s)
+[2026-05-06 15:27:50]   heart/xgboost/frac=0.25/seed=1: k=5 n_sub=75 AUROC=0.9102  (0.6s)
+[2026-05-06 15:27:51]   heart/xgboost/frac=0.25/seed=42: k=5 n_sub=75 AUROC=0.7653  (0.6s)
+[2026-05-06 15:27:52]   heart/xgboost/frac=0.5/seed=0: k=5 n_sub=151 AUROC=0.8737  (0.5s)
+[2026-05-06 15:27:52]   heart/xgboost/frac=0.5/seed=1: k=5 n_sub=151 AUROC=0.8869  (0.6s)
+[2026-05-06 15:27:53]   heart/xgboost/frac=0.5/seed=42: k=5 n_sub=151 AUROC=0.8811  (0.6s)
+[2026-05-06 15:27:54]   heart/xgboost/frac=1.0/seed=0: k=10 n_sub=303 AUROC=0.9058  (1.3s)
+[2026-05-06 15:27:55]   heart/xgboost/frac=1.0/seed=1: k=10 n_sub=303 AUROC=0.8928  (1.1s)
+[2026-05-06 15:27:56]   heart/xgboost/frac=1.0/seed=42: k=10 n_sub=303 AUROC=0.9021  (1.2s)
+[2026-05-06 15:27:56]   heart/catboost/frac=0.1/seed=0: k=5 n_sub=30 AUROC=0.7194  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.1/seed=1: k=5 n_sub=30 AUROC=0.9333  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.1/seed=42: k=5 n_sub=30 AUROC=0.8222  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.25/seed=0: k=5 n_sub=75 AUROC=0.8708  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.25/seed=1: k=5 n_sub=75 AUROC=0.8992  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.25/seed=42: k=5 n_sub=75 AUROC=0.7950  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.5/seed=0: k=5 n_sub=151 AUROC=0.8873  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.5/seed=1: k=5 n_sub=151 AUROC=0.9013  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=0.5/seed=42: k=5 n_sub=151 AUROC=0.8944  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=1.0/seed=0: k=10 n_sub=303 AUROC=0.9082  (0.2s)
+[2026-05-06 15:27:57]   heart/catboost/frac=1.0/seed=1: k=10 n_sub=303 AUROC=0.9047  (0.1s)
+[2026-05-06 15:27:57]   heart/catboost/frac=1.0/seed=42: k=10 n_sub=303 AUROC=0.9134  (0.2s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:04]   heart/tabpfn/frac=0.1/seed=0: k=5 n_sub=30 AUROC=0.7389  (6.5s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:07]   heart/tabpfn/frac=0.1/seed=1: k=5 n_sub=30 AUROC=0.9778  (3.4s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:11]   heart/tabpfn/frac=0.1/seed=42: k=5 n_sub=30 AUROC=0.7778  (3.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:16]   heart/tabpfn/frac=0.25/seed=0: k=5 n_sub=75 AUROC=0.8562  (5.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:21]   heart/tabpfn/frac=0.25/seed=1: k=5 n_sub=75 AUROC=0.9171  (4.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:26]   heart/tabpfn/frac=0.25/seed=42: k=5 n_sub=75 AUROC=0.8057  (4.6s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:33]   heart/tabpfn/frac=0.5/seed=0: k=5 n_sub=151 AUROC=0.8909  (7.5s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:43]   heart/tabpfn/frac=0.5/seed=1: k=5 n_sub=151 AUROC=0.8984  (9.9s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:28:51]   heart/tabpfn/frac=0.5/seed=42: k=5 n_sub=151 AUROC=0.8958  (8.4s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:29:30]   heart/tabpfn/frac=1.0/seed=0: k=10 n_sub=303 AUROC=0.9133  (39.1s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:30:10]   heart/tabpfn/frac=1.0/seed=1: k=10 n_sub=303 AUROC=0.9050  (39.2s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:30:44]   heart/tabpfn/frac=1.0/seed=42: k=10 n_sub=303 AUROC=0.9146  (34.5s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.1/seed=0: k=5 n_sub=76 AUROC=0.8073  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.1/seed=1: k=5 n_sub=76 AUROC=0.7671  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.1/seed=42: k=5 n_sub=76 AUROC=0.7781  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.25/seed=0: k=5 n_sub=192 AUROC=0.8372  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.25/seed=1: k=5 n_sub=192 AUROC=0.7956  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.25/seed=42: k=5 n_sub=192 AUROC=0.8263  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.5/seed=0: k=10 n_sub=384 AUROC=0.8139  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.5/seed=1: k=10 n_sub=384 AUROC=0.8452  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=0.5/seed=42: k=10 n_sub=384 AUROC=0.8217  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=1.0/seed=0: k=10 n_sub=768 AUROC=0.8303  (0.0s)
+[2026-05-06 15:30:44]   pima/logistic_regression/frac=1.0/seed=1: k=10 n_sub=768 AUROC=0.8339  (0.0s)
+[2026-05-06 15:30:45]   pima/logistic_regression/frac=1.0/seed=42: k=10 n_sub=768 AUROC=0.8332  (0.0s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.1/seed=0: k=5 n_sub=76 AUROC=0.8197  (0.0s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.1/seed=1: k=5 n_sub=76 AUROC=0.7610  (0.0s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.1/seed=42: k=5 n_sub=76 AUROC=0.7994  (0.0s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.25/seed=0: k=5 n_sub=192 AUROC=0.8434  (0.0s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.25/seed=1: k=5 n_sub=192 AUROC=0.8069  (0.0s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.25/seed=42: k=5 n_sub=192 AUROC=0.8227  (0.0s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.5/seed=0: k=10 n_sub=384 AUROC=0.8113  (0.1s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.5/seed=1: k=10 n_sub=384 AUROC=0.8502  (0.1s)
+[2026-05-06 15:30:45]   pima/svm/frac=0.5/seed=42: k=10 n_sub=384 AUROC=0.8273  (0.1s)
+[2026-05-06 15:30:45]   pima/svm/frac=1.0/seed=0: k=10 n_sub=768 AUROC=0.8371  (0.2s)
+[2026-05-06 15:30:45]   pima/svm/frac=1.0/seed=1: k=10 n_sub=768 AUROC=0.8378  (0.2s)
+[2026-05-06 15:30:46]   pima/svm/frac=1.0/seed=42: k=10 n_sub=768 AUROC=0.8360  (0.2s)
+[2026-05-06 15:30:46]   pima/random_forest/frac=0.1/seed=0: k=5 n_sub=76 AUROC=0.8087  (0.8s)
+[2026-05-06 15:30:47]   pima/random_forest/frac=0.1/seed=1: k=5 n_sub=76 AUROC=0.8459  (0.8s)
+[2026-05-06 15:30:48]   pima/random_forest/frac=0.1/seed=42: k=5 n_sub=76 AUROC=0.7407  (0.8s)
+[2026-05-06 15:30:49]   pima/random_forest/frac=0.25/seed=0: k=5 n_sub=192 AUROC=0.8479  (0.8s)
+[2026-05-06 15:30:50]   pima/random_forest/frac=0.25/seed=1: k=5 n_sub=192 AUROC=0.8451  (0.9s)
+[2026-05-06 15:30:51]   pima/random_forest/frac=0.25/seed=42: k=5 n_sub=192 AUROC=0.8117  (0.8s)
+[2026-05-06 15:30:52]   pima/random_forest/frac=0.5/seed=0: k=10 n_sub=384 AUROC=0.8176  (1.7s)
+[2026-05-06 15:30:54]   pima/random_forest/frac=0.5/seed=1: k=10 n_sub=384 AUROC=0.8677  (1.7s)
+[2026-05-06 15:30:56]   pima/random_forest/frac=0.5/seed=42: k=10 n_sub=384 AUROC=0.8280  (1.7s)
+[2026-05-06 15:30:58]   pima/random_forest/frac=1.0/seed=0: k=10 n_sub=768 AUROC=0.8314  (1.8s)
+[2026-05-06 15:30:59]   pima/random_forest/frac=1.0/seed=1: k=10 n_sub=768 AUROC=0.8365  (1.8s)
+[2026-05-06 15:31:01]   pima/random_forest/frac=1.0/seed=42: k=10 n_sub=768 AUROC=0.8366  (1.8s)
+[2026-05-06 15:31:01]   pima/mlp/frac=0.1/seed=0: k=5 n_sub=76 AUROC=0.8073  (0.1s)
+[2026-05-06 15:31:01]   pima/mlp/frac=0.1/seed=1: k=5 n_sub=76 AUROC=0.7816  (0.1s)
+[2026-05-06 15:31:02]   pima/mlp/frac=0.1/seed=42: k=5 n_sub=76 AUROC=0.7660  (0.1s)
+[2026-05-06 15:31:02]   pima/mlp/frac=0.25/seed=0: k=5 n_sub=192 AUROC=0.8480  (0.3s)
+[2026-05-06 15:31:02]   pima/mlp/frac=0.25/seed=1: k=5 n_sub=192 AUROC=0.7954  (0.1s)
+[2026-05-06 15:31:02]   pima/mlp/frac=0.25/seed=42: k=5 n_sub=192 AUROC=0.8127  (0.2s)
+[2026-05-06 15:31:03]   pima/mlp/frac=0.5/seed=0: k=10 n_sub=384 AUROC=0.8253  (0.5s)
+[2026-05-06 15:31:03]   pima/mlp/frac=0.5/seed=1: k=10 n_sub=384 AUROC=0.8224  (0.5s)
+[2026-05-06 15:31:04]   pima/mlp/frac=0.5/seed=42: k=10 n_sub=384 AUROC=0.8135  (0.5s)
+[2026-05-06 15:31:05]   pima/mlp/frac=1.0/seed=0: k=10 n_sub=768 AUROC=0.8235  (1.0s)
+[2026-05-06 15:31:06]   pima/mlp/frac=1.0/seed=1: k=10 n_sub=768 AUROC=0.8262  (0.9s)
+[2026-05-06 15:31:06]   pima/mlp/frac=1.0/seed=42: k=10 n_sub=768 AUROC=0.8289  (0.8s)
+[2026-05-06 15:31:07]   pima/xgboost/frac=0.1/seed=0: k=5 n_sub=76 AUROC=0.7784  (0.3s)
+[2026-05-06 15:31:07]   pima/xgboost/frac=0.1/seed=1: k=5 n_sub=76 AUROC=0.8249  (0.1s)
+[2026-05-06 15:31:07]   pima/xgboost/frac=0.1/seed=42: k=5 n_sub=76 AUROC=0.7382  (0.1s)
+[2026-05-06 15:31:07]   pima/xgboost/frac=0.25/seed=0: k=5 n_sub=192 AUROC=0.8421  (0.1s)
+[2026-05-06 15:31:07]   pima/xgboost/frac=0.25/seed=1: k=5 n_sub=192 AUROC=0.8373  (0.1s)
+[2026-05-06 15:31:07]   pima/xgboost/frac=0.25/seed=42: k=5 n_sub=192 AUROC=0.8172  (0.1s)
+[2026-05-06 15:31:07]   pima/xgboost/frac=0.5/seed=0: k=10 n_sub=384 AUROC=0.8205  (0.2s)
+[2026-05-06 15:31:08]   pima/xgboost/frac=0.5/seed=1: k=10 n_sub=384 AUROC=0.8572  (0.2s)
+[2026-05-06 15:31:08]   pima/xgboost/frac=0.5/seed=42: k=10 n_sub=384 AUROC=0.8155  (0.2s)
+[2026-05-06 15:31:08]   pima/xgboost/frac=1.0/seed=0: k=10 n_sub=768 AUROC=0.8294  (0.3s)
+[2026-05-06 15:31:08]   pima/xgboost/frac=1.0/seed=1: k=10 n_sub=768 AUROC=0.8332  (0.3s)
+[2026-05-06 15:31:09]   pima/xgboost/frac=1.0/seed=42: k=10 n_sub=768 AUROC=0.8400  (0.2s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.1/seed=0: k=5 n_sub=76 AUROC=0.7907  (0.1s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.1/seed=1: k=5 n_sub=76 AUROC=0.8156  (0.1s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.1/seed=42: k=5 n_sub=76 AUROC=0.7590  (0.1s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.25/seed=0: k=5 n_sub=192 AUROC=0.8561  (0.1s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.25/seed=1: k=5 n_sub=192 AUROC=0.8404  (0.1s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.25/seed=42: k=5 n_sub=192 AUROC=0.8255  (0.1s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.5/seed=0: k=10 n_sub=384 AUROC=0.8157  (0.2s)
+[2026-05-06 15:31:09]   pima/catboost/frac=0.5/seed=1: k=10 n_sub=384 AUROC=0.8760  (0.2s)
+[2026-05-06 15:31:10]   pima/catboost/frac=0.5/seed=42: k=10 n_sub=384 AUROC=0.8192  (0.2s)
+[2026-05-06 15:31:10]   pima/catboost/frac=1.0/seed=0: k=10 n_sub=768 AUROC=0.8368  (0.2s)
+[2026-05-06 15:31:10]   pima/catboost/frac=1.0/seed=1: k=10 n_sub=768 AUROC=0.8379  (0.2s)
+[2026-05-06 15:31:10]   pima/catboost/frac=1.0/seed=42: k=10 n_sub=768 AUROC=0.8450  (0.2s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:31:14]   pima/tabpfn/frac=0.1/seed=0: k=5 n_sub=76 AUROC=0.8529  (3.5s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:31:17]   pima/tabpfn/frac=0.1/seed=1: k=5 n_sub=76 AUROC=0.8632  (3.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:31:20]   pima/tabpfn/frac=0.1/seed=42: k=5 n_sub=76 AUROC=0.8001  (3.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:31:26]   pima/tabpfn/frac=0.25/seed=0: k=5 n_sub=192 AUROC=0.8600  (5.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:31:32]   pima/tabpfn/frac=0.25/seed=1: k=5 n_sub=192 AUROC=0.8531  (5.4s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:31:39]   pima/tabpfn/frac=0.25/seed=42: k=5 n_sub=192 AUROC=0.8345  (7.9s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:32:07]   pima/tabpfn/frac=0.5/seed=0: k=10 n_sub=384 AUROC=0.8246  (27.1s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:32:33]   pima/tabpfn/frac=0.5/seed=1: k=10 n_sub=384 AUROC=0.8762  (26.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:32:58]   pima/tabpfn/frac=0.5/seed=42: k=10 n_sub=384 AUROC=0.8268  (25.2s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:33:59]   pima/tabpfn/frac=1.0/seed=0: k=10 n_sub=768 AUROC=0.8438  (60.6s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:34:58]   pima/tabpfn/frac=1.0/seed=1: k=10 n_sub=768 AUROC=0.8485  (59.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:36:01]   pima/tabpfn/frac=1.0/seed=42: k=10 n_sub=768 AUROC=0.8464  (63.1s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.1/seed=0: k=5 n_sub=56 AUROC=1.0000  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.1/seed=1: k=5 n_sub=56 AUROC=0.9714  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.1/seed=42: k=5 n_sub=56 AUROC=1.0000  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.25/seed=0: k=5 n_sub=142 AUROC=0.9967  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.25/seed=1: k=5 n_sub=142 AUROC=0.9919  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.25/seed=42: k=5 n_sub=142 AUROC=0.9944  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.5/seed=0: k=10 n_sub=284 AUROC=0.9919  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.5/seed=1: k=10 n_sub=284 AUROC=0.9958  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=0.5/seed=42: k=10 n_sub=284 AUROC=0.9974  (0.0s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=1.0/seed=0: k=10 n_sub=569 AUROC=0.9958  (0.1s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=1.0/seed=1: k=10 n_sub=569 AUROC=0.9950  (0.1s)
+[2026-05-06 15:36:01]   breast_cancer/logistic_regression/frac=1.0/seed=42: k=10 n_sub=569 AUROC=0.9956  (0.1s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.1/seed=0: k=5 n_sub=56 AUROC=1.0000  (0.0s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.1/seed=1: k=5 n_sub=56 AUROC=0.9786  (0.0s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.1/seed=42: k=5 n_sub=56 AUROC=0.9929  (0.0s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.25/seed=0: k=5 n_sub=142 AUROC=0.9978  (0.0s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.25/seed=1: k=5 n_sub=142 AUROC=0.9949  (0.0s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.25/seed=42: k=5 n_sub=142 AUROC=0.9944  (0.0s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.5/seed=0: k=10 n_sub=284 AUROC=0.9934  (0.1s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.5/seed=1: k=10 n_sub=284 AUROC=0.9989  (0.1s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=0.5/seed=42: k=10 n_sub=284 AUROC=0.9979  (0.1s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=1.0/seed=0: k=10 n_sub=569 AUROC=0.9962  (0.1s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=1.0/seed=1: k=10 n_sub=569 AUROC=0.9966  (0.1s)
+[2026-05-06 15:36:02]   breast_cancer/svm/frac=1.0/seed=42: k=10 n_sub=569 AUROC=0.9963  (0.1s)
+[2026-05-06 15:36:03]   breast_cancer/random_forest/frac=0.1/seed=0: k=5 n_sub=56 AUROC=1.0000  (0.8s)
+[2026-05-06 15:36:04]   breast_cancer/random_forest/frac=0.1/seed=1: k=5 n_sub=56 AUROC=0.9714  (0.8s)
+[2026-05-06 15:36:05]   breast_cancer/random_forest/frac=0.1/seed=42: k=5 n_sub=56 AUROC=0.9857  (0.8s)
+[2026-05-06 15:36:05]   breast_cancer/random_forest/frac=0.25/seed=0: k=5 n_sub=142 AUROC=0.9956  (0.8s)
+[2026-05-06 15:36:06]   breast_cancer/random_forest/frac=0.25/seed=1: k=5 n_sub=142 AUROC=0.9903  (0.8s)
+[2026-05-06 15:36:07]   breast_cancer/random_forest/frac=0.25/seed=42: k=5 n_sub=142 AUROC=0.9873  (0.8s)
+[2026-05-06 15:36:09]   breast_cancer/random_forest/frac=0.5/seed=0: k=10 n_sub=284 AUROC=0.9918  (1.7s)
+[2026-05-06 15:36:10]   breast_cancer/random_forest/frac=0.5/seed=1: k=10 n_sub=284 AUROC=0.9920  (1.7s)
+[2026-05-06 15:36:12]   breast_cancer/random_forest/frac=0.5/seed=42: k=10 n_sub=284 AUROC=0.9899  (1.8s)
+[2026-05-06 15:36:14]   breast_cancer/random_forest/frac=1.0/seed=0: k=10 n_sub=569 AUROC=0.9918  (1.9s)
+[2026-05-06 15:36:16]   breast_cancer/random_forest/frac=1.0/seed=1: k=10 n_sub=569 AUROC=0.9888  (1.9s)
+[2026-05-06 15:36:18]   breast_cancer/random_forest/frac=1.0/seed=42: k=10 n_sub=569 AUROC=0.9904  (1.9s)
+[2026-05-06 15:36:18]   breast_cancer/mlp/frac=0.1/seed=0: k=5 n_sub=56 AUROC=0.9686  (0.0s)
+[2026-05-06 15:36:18]   breast_cancer/mlp/frac=0.1/seed=1: k=5 n_sub=56 AUROC=0.9714  (0.0s)
+[2026-05-06 15:36:18]   breast_cancer/mlp/frac=0.1/seed=42: k=5 n_sub=56 AUROC=0.9429  (0.0s)
+[2026-05-06 15:36:18]   breast_cancer/mlp/frac=0.25/seed=0: k=5 n_sub=142 AUROC=0.9779  (0.0s)
+[2026-05-06 15:36:18]   breast_cancer/mlp/frac=0.25/seed=1: k=5 n_sub=142 AUROC=0.9831  (0.0s)
+[2026-05-06 15:36:18]   breast_cancer/mlp/frac=0.25/seed=42: k=5 n_sub=142 AUROC=0.9860  (0.0s)
+[2026-05-06 15:36:18]   breast_cancer/mlp/frac=0.5/seed=0: k=10 n_sub=284 AUROC=0.9769  (0.3s)
+[2026-05-06 15:36:19]   breast_cancer/mlp/frac=0.5/seed=1: k=10 n_sub=284 AUROC=0.9908  (0.3s)
+[2026-05-06 15:36:19]   breast_cancer/mlp/frac=0.5/seed=42: k=10 n_sub=284 AUROC=0.9847  (0.3s)
+[2026-05-06 15:36:19]   breast_cancer/mlp/frac=1.0/seed=0: k=10 n_sub=569 AUROC=0.9931  (0.5s)
+[2026-05-06 15:36:20]   breast_cancer/mlp/frac=1.0/seed=1: k=10 n_sub=569 AUROC=0.9927  (0.5s)
+[2026-05-06 15:36:20]   breast_cancer/mlp/frac=1.0/seed=42: k=10 n_sub=569 AUROC=0.9856  (0.6s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.1/seed=0: k=5 n_sub=56 AUROC=0.9657  (0.3s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.1/seed=1: k=5 n_sub=56 AUROC=0.9571  (0.1s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.1/seed=42: k=5 n_sub=56 AUROC=0.9643  (0.1s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.25/seed=0: k=5 n_sub=142 AUROC=0.9978  (0.1s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.25/seed=1: k=5 n_sub=142 AUROC=0.9850  (0.1s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.25/seed=42: k=5 n_sub=142 AUROC=0.9928  (0.1s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.5/seed=0: k=10 n_sub=284 AUROC=0.9817  (0.2s)
+[2026-05-06 15:36:21]   breast_cancer/xgboost/frac=0.5/seed=1: k=10 n_sub=284 AUROC=0.9921  (0.2s)
+[2026-05-06 15:36:22]   breast_cancer/xgboost/frac=0.5/seed=42: k=10 n_sub=284 AUROC=0.9957  (0.2s)
+[2026-05-06 15:36:22]   breast_cancer/xgboost/frac=1.0/seed=0: k=10 n_sub=569 AUROC=0.9945  (0.3s)
+[2026-05-06 15:36:22]   breast_cancer/xgboost/frac=1.0/seed=1: k=10 n_sub=569 AUROC=0.9947  (0.3s)
+[2026-05-06 15:36:22]   breast_cancer/xgboost/frac=1.0/seed=42: k=10 n_sub=569 AUROC=0.9921  (0.3s)
+[2026-05-06 15:36:23]   breast_cancer/catboost/frac=0.1/seed=0: k=5 n_sub=56 AUROC=1.0000  (0.9s)
+[2026-05-06 15:36:24]   breast_cancer/catboost/frac=0.1/seed=1: k=5 n_sub=56 AUROC=0.9571  (0.8s)
+[2026-05-06 15:36:25]   breast_cancer/catboost/frac=0.1/seed=42: k=5 n_sub=56 AUROC=0.9429  (0.8s)
+[2026-05-06 15:36:27]   breast_cancer/catboost/frac=0.25/seed=0: k=5 n_sub=142 AUROC=0.9923  (1.6s)
+[2026-05-06 15:36:28]   breast_cancer/catboost/frac=0.25/seed=1: k=5 n_sub=142 AUROC=0.9895  (1.6s)
+[2026-05-06 15:36:30]   breast_cancer/catboost/frac=0.25/seed=42: k=5 n_sub=142 AUROC=0.9856  (1.6s)
+[2026-05-06 15:36:36]   breast_cancer/catboost/frac=0.5/seed=0: k=10 n_sub=284 AUROC=0.9881  (6.0s)
+[2026-05-06 15:36:42]   breast_cancer/catboost/frac=0.5/seed=1: k=10 n_sub=284 AUROC=0.9964  (5.9s)
+[2026-05-06 15:36:48]   breast_cancer/catboost/frac=0.5/seed=42: k=10 n_sub=284 AUROC=0.9947  (5.9s)
+[2026-05-06 15:36:54]   breast_cancer/catboost/frac=1.0/seed=0: k=10 n_sub=569 AUROC=0.9943  (6.3s)
+[2026-05-06 15:37:00]   breast_cancer/catboost/frac=1.0/seed=1: k=10 n_sub=569 AUROC=0.9941  (6.3s)
+[2026-05-06 15:37:06]   breast_cancer/catboost/frac=1.0/seed=42: k=10 n_sub=569 AUROC=0.9934  (6.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:37:12]   breast_cancer/tabpfn/frac=0.1/seed=0: k=5 n_sub=56 AUROC=1.0000  (6.0s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:37:19]   breast_cancer/tabpfn/frac=0.1/seed=1: k=5 n_sub=56 AUROC=0.9800  (6.4s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:37:25]   breast_cancer/tabpfn/frac=0.1/seed=42: k=5 n_sub=56 AUROC=1.0000  (6.2s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:37:36]   breast_cancer/tabpfn/frac=0.25/seed=0: k=5 n_sub=142 AUROC=0.9989  (11.2s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:37:47]   breast_cancer/tabpfn/frac=0.25/seed=1: k=5 n_sub=142 AUROC=0.9958  (11.1s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:37:59]   breast_cancer/tabpfn/frac=0.25/seed=42: k=5 n_sub=142 AUROC=0.9933  (11.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:38:53]   breast_cancer/tabpfn/frac=0.5/seed=0: k=10 n_sub=284 AUROC=0.9890  (54.6s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:39:57]   breast_cancer/tabpfn/frac=0.5/seed=1: k=10 n_sub=284 AUROC=0.9984  (63.5s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:41:05]   breast_cancer/tabpfn/frac=0.5/seed=42: k=10 n_sub=284 AUROC=0.9989  (67.8s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:43:17]   breast_cancer/tabpfn/frac=1.0/seed=0: k=10 n_sub=569 AUROC=0.9976  (132.8s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:45:20]   breast_cancer/tabpfn/frac=1.0/seed=1: k=10 n_sub=569 AUROC=0.9975  (122.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:47:25]   breast_cancer/tabpfn/frac=1.0/seed=42: k=10 n_sub=569 AUROC=0.9968  (124.9s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.1/seed=0: k=5 n_sub=58 AUROC=0.7225  (0.0s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.1/seed=1: k=5 n_sub=58 AUROC=0.6711  (0.0s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.1/seed=42: k=5 n_sub=58 AUROC=0.8414  (0.0s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.25/seed=0: k=5 n_sub=145 AUROC=0.7437  (0.0s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.25/seed=1: k=5 n_sub=145 AUROC=0.6110  (0.0s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.25/seed=42: k=5 n_sub=145 AUROC=0.7333  (0.0s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.5/seed=0: k=10 n_sub=291 AUROC=0.7450  (0.1s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.5/seed=1: k=10 n_sub=291 AUROC=0.7240  (0.1s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=0.5/seed=42: k=10 n_sub=291 AUROC=0.7410  (0.1s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=1.0/seed=0: k=10 n_sub=583 AUROC=0.7496  (0.1s)
+[2026-05-06 15:47:25]   liver/logistic_regression/frac=1.0/seed=1: k=10 n_sub=583 AUROC=0.7518  (0.1s)
+[2026-05-06 15:47:26]   liver/logistic_regression/frac=1.0/seed=42: k=10 n_sub=583 AUROC=0.7544  (0.1s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.1/seed=0: k=5 n_sub=58 AUROC=0.3706  (0.0s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.1/seed=1: k=5 n_sub=58 AUROC=0.5456  (0.0s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.1/seed=42: k=5 n_sub=58 AUROC=0.7748  (0.0s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.25/seed=0: k=5 n_sub=145 AUROC=0.6714  (0.0s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.25/seed=1: k=5 n_sub=145 AUROC=0.5463  (0.0s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.25/seed=42: k=5 n_sub=145 AUROC=0.6698  (0.0s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.5/seed=0: k=10 n_sub=291 AUROC=0.7079  (0.1s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.5/seed=1: k=10 n_sub=291 AUROC=0.6205  (0.1s)
+[2026-05-06 15:47:26]   liver/svm/frac=0.5/seed=42: k=10 n_sub=291 AUROC=0.6890  (0.1s)
+[2026-05-06 15:47:26]   liver/svm/frac=1.0/seed=0: k=10 n_sub=583 AUROC=0.7010  (0.2s)
+[2026-05-06 15:47:26]   liver/svm/frac=1.0/seed=1: k=10 n_sub=583 AUROC=0.7052  (0.2s)
+[2026-05-06 15:47:27]   liver/svm/frac=1.0/seed=42: k=10 n_sub=583 AUROC=0.7052  (0.2s)
+[2026-05-06 15:47:28]   liver/random_forest/frac=0.1/seed=0: k=5 n_sub=58 AUROC=0.7383  (1.0s)
+[2026-05-06 15:47:29]   liver/random_forest/frac=0.1/seed=1: k=5 n_sub=58 AUROC=0.7612  (0.8s)
+[2026-05-06 15:47:29]   liver/random_forest/frac=0.1/seed=42: k=5 n_sub=58 AUROC=0.7404  (0.9s)
+[2026-05-06 15:47:30]   liver/random_forest/frac=0.25/seed=0: k=5 n_sub=145 AUROC=0.6657  (1.0s)
+[2026-05-06 15:47:31]   liver/random_forest/frac=0.25/seed=1: k=5 n_sub=145 AUROC=0.6622  (1.1s)
+[2026-05-06 15:47:32]   liver/random_forest/frac=0.25/seed=42: k=5 n_sub=145 AUROC=0.6994  (0.9s)
+[2026-05-06 15:47:34]   liver/random_forest/frac=0.5/seed=0: k=10 n_sub=291 AUROC=0.7233  (1.8s)
+[2026-05-06 15:47:36]   liver/random_forest/frac=0.5/seed=1: k=10 n_sub=291 AUROC=0.7273  (1.8s)
+[2026-05-06 15:47:38]   liver/random_forest/frac=0.5/seed=42: k=10 n_sub=291 AUROC=0.7231  (1.7s)
+[2026-05-06 15:47:40]   liver/random_forest/frac=1.0/seed=0: k=10 n_sub=583 AUROC=0.7503  (1.9s)
+[2026-05-06 15:47:42]   liver/random_forest/frac=1.0/seed=1: k=10 n_sub=583 AUROC=0.7279  (2.0s)
+[2026-05-06 15:47:43]   liver/random_forest/frac=1.0/seed=42: k=10 n_sub=583 AUROC=0.7578  (1.9s)
+[2026-05-06 15:47:43]   liver/mlp/frac=0.1/seed=0: k=5 n_sub=58 AUROC=0.5657  (0.0s)
+[2026-05-06 15:47:43]   liver/mlp/frac=0.1/seed=1: k=5 n_sub=58 AUROC=0.4324  (0.0s)
+[2026-05-06 15:47:44]   liver/mlp/frac=0.1/seed=42: k=5 n_sub=58 AUROC=0.7028  (0.0s)
+[2026-05-06 15:47:44]   liver/mlp/frac=0.25/seed=0: k=5 n_sub=145 AUROC=0.5835  (0.0s)
+[2026-05-06 15:47:44]   liver/mlp/frac=0.25/seed=1: k=5 n_sub=145 AUROC=0.5820  (0.0s)
+[2026-05-06 15:47:44]   liver/mlp/frac=0.25/seed=42: k=5 n_sub=145 AUROC=0.5751  (0.1s)
+[2026-05-06 15:47:44]   liver/mlp/frac=0.5/seed=0: k=10 n_sub=291 AUROC=0.6567  (0.4s)
+[2026-05-06 15:47:44]   liver/mlp/frac=0.5/seed=1: k=10 n_sub=291 AUROC=0.6698  (0.4s)
+[2026-05-06 15:47:45]   liver/mlp/frac=0.5/seed=42: k=10 n_sub=291 AUROC=0.6075  (0.4s)
+[2026-05-06 15:47:46]   liver/mlp/frac=1.0/seed=0: k=10 n_sub=583 AUROC=0.7295  (0.8s)
+[2026-05-06 15:47:46]   liver/mlp/frac=1.0/seed=1: k=10 n_sub=583 AUROC=0.7027  (0.7s)
+[2026-05-06 15:47:47]   liver/mlp/frac=1.0/seed=42: k=10 n_sub=583 AUROC=0.6609  (0.6s)
+[2026-05-06 15:47:47]   liver/xgboost/frac=0.1/seed=0: k=5 n_sub=58 AUROC=0.6998  (0.4s)
+[2026-05-06 15:47:48]   liver/xgboost/frac=0.1/seed=1: k=5 n_sub=58 AUROC=0.7044  (0.1s)
+[2026-05-06 15:47:48]   liver/xgboost/frac=0.1/seed=42: k=5 n_sub=58 AUROC=0.7069  (0.1s)
+[2026-05-06 15:47:48]   liver/xgboost/frac=0.25/seed=0: k=5 n_sub=145 AUROC=0.6362  (0.2s)
+[2026-05-06 15:47:48]   liver/xgboost/frac=0.25/seed=1: k=5 n_sub=145 AUROC=0.6705  (0.2s)
+[2026-05-06 15:47:48]   liver/xgboost/frac=0.25/seed=42: k=5 n_sub=145 AUROC=0.7548  (0.2s)
+[2026-05-06 15:47:49]   liver/xgboost/frac=0.5/seed=0: k=10 n_sub=291 AUROC=0.7328  (0.7s)
+[2026-05-06 15:47:50]   liver/xgboost/frac=0.5/seed=1: k=10 n_sub=291 AUROC=0.7332  (0.7s)
+[2026-05-06 15:47:50]   liver/xgboost/frac=0.5/seed=42: k=10 n_sub=291 AUROC=0.7103  (0.7s)
+[2026-05-06 15:47:52]   liver/xgboost/frac=1.0/seed=0: k=10 n_sub=583 AUROC=0.7407  (1.3s)
+[2026-05-06 15:47:53]   liver/xgboost/frac=1.0/seed=1: k=10 n_sub=583 AUROC=0.7144  (0.9s)
+[2026-05-06 15:47:54]   liver/xgboost/frac=1.0/seed=42: k=10 n_sub=583 AUROC=0.7499  (1.6s)
+[2026-05-06 15:47:55]   liver/catboost/frac=0.1/seed=0: k=5 n_sub=58 AUROC=0.7600  (0.9s)
+[2026-05-06 15:47:56]   liver/catboost/frac=0.1/seed=1: k=5 n_sub=58 AUROC=0.7127  (0.8s)
+[2026-05-06 15:47:57]   liver/catboost/frac=0.1/seed=42: k=5 n_sub=58 AUROC=0.7028  (0.8s)
+[2026-05-06 15:47:58]   liver/catboost/frac=0.25/seed=0: k=5 n_sub=145 AUROC=0.6599  (1.4s)
+[2026-05-06 15:47:59]   liver/catboost/frac=0.25/seed=1: k=5 n_sub=145 AUROC=0.6437  (1.4s)
+[2026-05-06 15:48:01]   liver/catboost/frac=0.25/seed=42: k=5 n_sub=145 AUROC=0.7162  (1.3s)
+[2026-05-06 15:48:04]   liver/catboost/frac=0.5/seed=0: k=10 n_sub=291 AUROC=0.7419  (3.7s)
+[2026-05-06 15:48:08]   liver/catboost/frac=0.5/seed=1: k=10 n_sub=291 AUROC=0.7044  (3.7s)
+[2026-05-06 15:48:12]   liver/catboost/frac=0.5/seed=42: k=10 n_sub=291 AUROC=0.7235  (3.5s)
+[2026-05-06 15:48:17]   liver/catboost/frac=1.0/seed=0: k=10 n_sub=583 AUROC=0.7491  (5.0s)
+[2026-05-06 15:48:22]   liver/catboost/frac=1.0/seed=1: k=10 n_sub=583 AUROC=0.7342  (4.9s)
+[2026-05-06 15:48:27]   liver/catboost/frac=1.0/seed=42: k=10 n_sub=583 AUROC=0.7735  (5.0s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:48:31]   liver/tabpfn/frac=0.1/seed=0: k=5 n_sub=58 AUROC=0.7340  (4.2s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:48:35]   liver/tabpfn/frac=0.1/seed=1: k=5 n_sub=58 AUROC=0.6836  (4.6s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:48:40]   liver/tabpfn/frac=0.1/seed=42: k=5 n_sub=58 AUROC=0.7579  (4.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:48:47]   liver/tabpfn/frac=0.25/seed=0: k=5 n_sub=145 AUROC=0.7392  (7.1s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:48:53]   liver/tabpfn/frac=0.25/seed=1: k=5 n_sub=145 AUROC=0.6128  (5.8s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:48:59]   liver/tabpfn/frac=0.25/seed=42: k=5 n_sub=145 AUROC=0.7965  (6.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:49:30]   liver/tabpfn/frac=0.5/seed=0: k=10 n_sub=291 AUROC=0.7541  (30.9s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:50:00]   liver/tabpfn/frac=0.5/seed=1: k=10 n_sub=291 AUROC=0.7216  (30.5s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:50:29]   liver/tabpfn/frac=0.5/seed=42: k=10 n_sub=291 AUROC=0.8000  (28.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:51:28]   liver/tabpfn/frac=1.0/seed=0: k=10 n_sub=583 AUROC=0.7482  (58.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:52:22]   liver/tabpfn/frac=1.0/seed=1: k=10 n_sub=583 AUROC=0.7455  (54.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:53:20]   liver/tabpfn/frac=1.0/seed=42: k=10 n_sub=583 AUROC=0.7601  (57.5s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.1/seed=0: k=5 n_sub=40 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.1/seed=1: k=5 n_sub=40 AUROC=1.0000  (0.0s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.1/seed=42: k=5 n_sub=40 AUROC=1.0000  (0.0s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.25/seed=0: k=5 n_sub=100 AUROC=1.0000  (0.0s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.25/seed=1: k=5 n_sub=100 AUROC=1.0000  (0.0s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.25/seed=42: k=5 n_sub=100 AUROC=1.0000  (0.0s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.5/seed=0: k=10 n_sub=200 AUROC=0.9967  (0.1s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.5/seed=1: k=10 n_sub=200 AUROC=0.9990  (0.1s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=0.5/seed=42: k=10 n_sub=200 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:20]   ckd/logistic_regression/frac=1.0/seed=0: k=10 n_sub=400 AUROC=0.9997  (0.2s)
+[2026-05-06 15:53:21]   ckd/logistic_regression/frac=1.0/seed=1: k=10 n_sub=400 AUROC=1.0000  (0.2s)
+[2026-05-06 15:53:21]   ckd/logistic_regression/frac=1.0/seed=42: k=10 n_sub=400 AUROC=1.0000  (0.2s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.1/seed=0: k=5 n_sub=40 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.1/seed=1: k=5 n_sub=40 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.1/seed=42: k=5 n_sub=40 AUROC=1.0000  (0.0s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.25/seed=0: k=5 n_sub=100 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.25/seed=1: k=5 n_sub=100 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.25/seed=42: k=5 n_sub=100 AUROC=1.0000  (0.0s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.5/seed=0: k=10 n_sub=200 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.5/seed=1: k=10 n_sub=200 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:21]   ckd/svm/frac=0.5/seed=42: k=10 n_sub=200 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:21]   ckd/svm/frac=1.0/seed=0: k=10 n_sub=400 AUROC=1.0000  (0.2s)
+[2026-05-06 15:53:22]   ckd/svm/frac=1.0/seed=1: k=10 n_sub=400 AUROC=1.0000  (0.2s)
+[2026-05-06 15:53:22]   ckd/svm/frac=1.0/seed=42: k=10 n_sub=400 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:22]   ckd/random_forest/frac=0.1/seed=0: k=5 n_sub=40 AUROC=1.0000  (0.4s)
+[2026-05-06 15:53:23]   ckd/random_forest/frac=0.1/seed=1: k=5 n_sub=40 AUROC=1.0000  (0.4s)
+[2026-05-06 15:53:23]   ckd/random_forest/frac=0.1/seed=42: k=5 n_sub=40 AUROC=1.0000  (0.6s)
+[2026-05-06 15:53:24]   ckd/random_forest/frac=0.25/seed=0: k=5 n_sub=100 AUROC=1.0000  (0.4s)
+[2026-05-06 15:53:24]   ckd/random_forest/frac=0.25/seed=1: k=5 n_sub=100 AUROC=1.0000  (0.4s)
+[2026-05-06 15:53:24]   ckd/random_forest/frac=0.25/seed=42: k=5 n_sub=100 AUROC=1.0000  (0.4s)
+[2026-05-06 15:53:25]   ckd/random_forest/frac=0.5/seed=0: k=10 n_sub=200 AUROC=1.0000  (0.9s)
+[2026-05-06 15:53:26]   ckd/random_forest/frac=0.5/seed=1: k=10 n_sub=200 AUROC=0.9979  (0.8s)
+[2026-05-06 15:53:27]   ckd/random_forest/frac=0.5/seed=42: k=10 n_sub=200 AUROC=1.0000  (0.8s)
+[2026-05-06 15:53:28]   ckd/random_forest/frac=1.0/seed=0: k=10 n_sub=400 AUROC=0.9996  (0.9s)
+[2026-05-06 15:53:29]   ckd/random_forest/frac=1.0/seed=1: k=10 n_sub=400 AUROC=0.9995  (0.9s)
+[2026-05-06 15:53:30]   ckd/random_forest/frac=1.0/seed=42: k=10 n_sub=400 AUROC=1.0000  (0.9s)
+[2026-05-06 15:53:30]   ckd/mlp/frac=0.1/seed=0: k=5 n_sub=40 AUROC=0.9467  (0.1s)
+[2026-05-06 15:53:30]   ckd/mlp/frac=0.1/seed=1: k=5 n_sub=40 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:30]   ckd/mlp/frac=0.1/seed=42: k=5 n_sub=40 AUROC=1.0000  (0.1s)
+[2026-05-06 15:53:30]   ckd/mlp/frac=0.25/seed=0: k=5 n_sub=100 AUROC=0.9874  (0.5s)
+[2026-05-06 15:53:31]   ckd/mlp/frac=0.25/seed=1: k=5 n_sub=100 AUROC=0.9875  (0.6s)
+[2026-05-06 15:53:32]   ckd/mlp/frac=0.25/seed=42: k=5 n_sub=100 AUROC=0.9958  (0.6s)
+[2026-05-06 15:53:32]   ckd/mlp/frac=0.5/seed=0: k=10 n_sub=200 AUROC=0.9905  (0.7s)
+[2026-05-06 15:53:33]   ckd/mlp/frac=0.5/seed=1: k=10 n_sub=200 AUROC=0.9948  (1.0s)
+[2026-05-06 15:53:34]   ckd/mlp/frac=0.5/seed=42: k=10 n_sub=200 AUROC=0.9824  (0.8s)
+[2026-05-06 15:53:35]   ckd/mlp/frac=1.0/seed=0: k=10 n_sub=400 AUROC=0.9955  (1.0s)
+[2026-05-06 15:53:37]   ckd/mlp/frac=1.0/seed=1: k=10 n_sub=400 AUROC=0.9973  (1.5s)
+[2026-05-06 15:53:38]   ckd/mlp/frac=1.0/seed=42: k=10 n_sub=400 AUROC=0.9997  (1.6s)
+[2026-05-06 15:53:39]   ckd/xgboost/frac=0.1/seed=0: k=5 n_sub=40 AUROC=0.9800  (0.4s)
+[2026-05-06 15:53:39]   ckd/xgboost/frac=0.1/seed=1: k=5 n_sub=40 AUROC=0.9600  (0.1s)
+[2026-05-06 15:53:39]   ckd/xgboost/frac=0.1/seed=42: k=5 n_sub=40 AUROC=0.9267  (0.1s)
+[2026-05-06 15:53:39]   ckd/xgboost/frac=0.25/seed=0: k=5 n_sub=100 AUROC=0.9913  (0.1s)
+[2026-05-06 15:53:39]   ckd/xgboost/frac=0.25/seed=1: k=5 n_sub=100 AUROC=0.9788  (0.1s)
+[2026-05-06 15:53:39]   ckd/xgboost/frac=0.25/seed=42: k=5 n_sub=100 AUROC=0.9934  (0.1s)
+[2026-05-06 15:53:40]   ckd/xgboost/frac=0.5/seed=0: k=10 n_sub=200 AUROC=1.0000  (0.3s)
+[2026-05-06 15:53:40]   ckd/xgboost/frac=0.5/seed=1: k=10 n_sub=200 AUROC=0.9968  (0.3s)
+[2026-05-06 15:53:40]   ckd/xgboost/frac=0.5/seed=42: k=10 n_sub=200 AUROC=0.9947  (0.3s)
+[2026-05-06 15:53:41]   ckd/xgboost/frac=1.0/seed=0: k=10 n_sub=400 AUROC=0.9997  (0.4s)
+[2026-05-06 15:53:41]   ckd/xgboost/frac=1.0/seed=1: k=10 n_sub=400 AUROC=0.9995  (0.4s)
+[2026-05-06 15:53:41]   ckd/xgboost/frac=1.0/seed=42: k=10 n_sub=400 AUROC=0.9989  (0.4s)
+[2026-05-06 15:53:42]   ckd/catboost/frac=0.1/seed=0: k=5 n_sub=40 AUROC=1.0000  (0.2s)
+[2026-05-06 15:53:42]   ckd/catboost/frac=0.1/seed=1: k=5 n_sub=40 AUROC=1.0000  (0.2s)
+[2026-05-06 15:53:42]   ckd/catboost/frac=0.1/seed=42: k=5 n_sub=40 AUROC=0.9733  (0.2s)
+[2026-05-06 15:53:42]   ckd/catboost/frac=0.25/seed=0: k=5 n_sub=100 AUROC=0.9978  (0.2s)
+[2026-05-06 15:53:42]   ckd/catboost/frac=0.25/seed=1: k=5 n_sub=100 AUROC=0.9978  (0.2s)
+[2026-05-06 15:53:43]   ckd/catboost/frac=0.25/seed=42: k=5 n_sub=100 AUROC=0.9978  (0.2s)
+[2026-05-06 15:53:43]   ckd/catboost/frac=0.5/seed=0: k=10 n_sub=200 AUROC=1.0000  (0.5s)
+[2026-05-06 15:53:44]   ckd/catboost/frac=0.5/seed=1: k=10 n_sub=200 AUROC=0.9979  (0.5s)
+[2026-05-06 15:53:44]   ckd/catboost/frac=0.5/seed=42: k=10 n_sub=200 AUROC=1.0000  (0.5s)
+[2026-05-06 15:53:45]   ckd/catboost/frac=1.0/seed=0: k=10 n_sub=400 AUROC=1.0000  (0.6s)
+[2026-05-06 15:53:45]   ckd/catboost/frac=1.0/seed=1: k=10 n_sub=400 AUROC=0.9995  (0.6s)
+[2026-05-06 15:53:46]   ckd/catboost/frac=1.0/seed=42: k=10 n_sub=400 AUROC=0.9997  (0.6s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:53:52]   ckd/tabpfn/frac=0.1/seed=0: k=5 n_sub=40 AUROC=1.0000  (5.9s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:53:58]   ckd/tabpfn/frac=0.1/seed=1: k=5 n_sub=40 AUROC=1.0000  (5.9s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:54:04]   ckd/tabpfn/frac=0.1/seed=42: k=5 n_sub=40 AUROC=1.0000  (6.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:54:15]   ckd/tabpfn/frac=0.25/seed=0: k=5 n_sub=100 AUROC=1.0000  (10.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:54:25]   ckd/tabpfn/frac=0.25/seed=1: k=5 n_sub=100 AUROC=1.0000  (10.1s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:54:37]   ckd/tabpfn/frac=0.25/seed=42: k=5 n_sub=100 AUROC=1.0000  (11.8s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:55:17]   ckd/tabpfn/frac=0.5/seed=0: k=10 n_sub=200 AUROC=1.0000  (40.1s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:55:53]   ckd/tabpfn/frac=0.5/seed=1: k=10 n_sub=200 AUROC=1.0000  (36.0s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:56:33]   ckd/tabpfn/frac=0.5/seed=42: k=10 n_sub=200 AUROC=1.0000  (40.3s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:58:10]   ckd/tabpfn/frac=1.0/seed=0: k=10 n_sub=400 AUROC=1.0000  (96.7s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 15:59:51]   ckd/tabpfn/frac=1.0/seed=1: k=10 n_sub=400 AUROC=1.0000  (100.6s)
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+WARNING: TabPFN running on CPU — inference will be slow.
+TabPFN checkpoint: /Users/jeremy/Library/Caches/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 16:01:29]   ckd/tabpfn/frac=1.0/seed=42: k=10 n_sub=400 AUROC=1.0000  (98.5s)
+[2026-05-06 16:01:29] saved /Users/jeremy/Desktop/NYU/ML/ds-ga-1003-final/results/sample_ablation_raw.csv  rows=3045
+[2026-05-06 16:01:29] saved /Users/jeremy/Desktop/NYU/ML/ds-ga-1003-final/results/sample_ablation_summary.csv
+[2026-05-06 16:01:30] saved /Users/jeremy/Desktop/NYU/ML/ds-ga-1003-final/figures/sample_ablation.pdf
+[2026-05-06 16:01:30] total runtime: 2037.1s
+SAMPLE ABLATION DONE

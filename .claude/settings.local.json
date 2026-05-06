@@ -27,7 +27,8 @@
       "Bash(sips -s format png results/figures/liver_class_dist.pdf --out /tmp/liver_classdist.png)",
       "Bash(pytest tests/test_nested_cv.py -q)",
       "Bash(python3 *)",
-      "Bash(/opt/anaconda3/bin/python *)"
+      "Bash(/opt/anaconda3/bin/python *)",
+      "Bash(tee results/sample_ablation_run.log)"
     ]
   }
 }
