@@ -1,0 +1,147 @@
+STARTING PERMUTATION IMPORTANCE (option C)
+[2026-05-06 18:14:29] datasets=['heart', 'pima', 'breast_cancer', 'liver', 'ckd']
+[2026-05-06 18:14:29] models=['logistic_regression', 'svm', 'random_forest', 'mlp', 'xgboost', 'catboost', 'tabpfn']
+[2026-05-06 18:14:29] seed=42  k_folds=10  n_repeats=10
+[2026-05-06 18:14:29] SKIP on breast_cancer: ['tabpfn'] (saturated)
+[2026-05-06 18:14:29] SKIP on ckd: ['tabpfn'] (saturated)
+[2026-05-06 18:14:44] CUDA available: NVIDIA A100-SXM4-40GB (devices: 1)
+[2026-05-06 18:14:45] === heart / logistic_regression (n_repeats=10) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+[2026-05-06 18:14:53] DONE heart / logistic_regression in 8.3s (13 features)
+[2026-05-06 18:14:53] === heart / svm (n_repeats=10) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+[2026-05-06 18:15:02] DONE heart / svm in 9.1s (13 features)
+[2026-05-06 18:15:02] === heart / random_forest (n_repeats=10) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+[2026-05-06 18:16:18] DONE heart / random_forest in 76.2s (13 features)
+[2026-05-06 18:16:18] === heart / mlp (n_repeats=10) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+[2026-05-06 18:16:27] DONE heart / mlp in 8.4s (13 features)
+[2026-05-06 18:16:27] === heart / xgboost (n_repeats=10) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+[2026-05-06 18:16:38] DONE heart / xgboost in 11.0s (13 features)
+[2026-05-06 18:16:38] === heart / catboost (n_repeats=10) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+[2026-05-06 18:16:47] DONE heart / catboost in 9.5s (13 features)
+[2026-05-06 18:16:47] === heart / tabpfn (n_repeats=10) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 18:28:15] DONE heart / tabpfn in 688.0s (13 features)
+[2026-05-06 18:28:15] === pima / logistic_regression (n_repeats=10) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+[2026-05-06 18:28:20] DONE pima / logistic_regression in 4.8s (8 features)
+[2026-05-06 18:28:20] === pima / svm (n_repeats=10) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+[2026-05-06 18:28:26] DONE pima / svm in 6.4s (8 features)
+[2026-05-06 18:28:26] === pima / random_forest (n_repeats=10) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+[2026-05-06 18:29:18] DONE pima / random_forest in 52.0s (8 features)
+[2026-05-06 18:29:18] === pima / mlp (n_repeats=10) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+[2026-05-06 18:29:24] DONE pima / mlp in 5.8s (8 features)
+[2026-05-06 18:29:24] === pima / xgboost (n_repeats=10) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+[2026-05-06 18:29:31] DONE pima / xgboost in 6.8s (8 features)
+[2026-05-06 18:29:31] === pima / catboost (n_repeats=10) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+[2026-05-06 18:29:37] DONE pima / catboost in 5.8s (8 features)
+[2026-05-06 18:29:37] === pima / tabpfn (n_repeats=10) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 18:36:06] DONE pima / tabpfn in 389.6s (8 features)
+[2026-05-06 18:36:06] === breast_cancer / logistic_regression (n_repeats=10) ===
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+[2026-05-06 18:36:24] DONE breast_cancer / logistic_regression in 17.5s (30 features)
+[2026-05-06 18:36:24] === breast_cancer / svm (n_repeats=10) ===
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+[2026-05-06 18:36:43] DONE breast_cancer / svm in 18.7s (30 features)
+[2026-05-06 18:36:43] === breast_cancer / random_forest (n_repeats=10) ===
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+[2026-05-06 18:39:32] DONE breast_cancer / random_forest in 169.3s (30 features)
+[2026-05-06 18:39:32] === breast_cancer / mlp (n_repeats=10) ===
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+[2026-05-06 18:39:50] DONE breast_cancer / mlp in 17.9s (30 features)
+[2026-05-06 18:39:50] === breast_cancer / xgboost (n_repeats=10) ===
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+[2026-05-06 18:40:12] DONE breast_cancer / xgboost in 22.4s (30 features)
+[2026-05-06 18:40:12] === breast_cancer / catboost (n_repeats=10) ===
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+[2026-05-06 18:40:47] DONE breast_cancer / catboost in 34.9s (30 features)
+[2026-05-06 18:40:47] SKIP breast_cancer / tabpfn (option C)
+[2026-05-06 18:40:47] === liver / logistic_regression (n_repeats=10) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+[2026-05-06 18:40:56] DONE liver / logistic_regression in 8.8s (10 features)
+[2026-05-06 18:40:56] === liver / svm (n_repeats=10) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+[2026-05-06 18:41:06] DONE liver / svm in 10.3s (10 features)
+[2026-05-06 18:41:06] === liver / random_forest (n_repeats=10) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+[2026-05-06 18:42:12] DONE liver / random_forest in 66.3s (10 features)
+[2026-05-06 18:42:12] === liver / mlp (n_repeats=10) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+[2026-05-06 18:42:22] DONE liver / mlp in 9.2s (10 features)
+[2026-05-06 18:42:22] === liver / xgboost (n_repeats=10) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+[2026-05-06 18:42:36] DONE liver / xgboost in 14.9s (10 features)
+[2026-05-06 18:42:36] === liver / catboost (n_repeats=10) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+[2026-05-06 18:42:56] DONE liver / catboost in 19.7s (10 features)
+[2026-05-06 18:42:56] === liver / tabpfn (n_repeats=10) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+[2026-05-06 18:51:09] DONE liver / tabpfn in 492.5s (10 features)
+[2026-05-06 18:51:09] === ckd / logistic_regression (n_repeats=10) ===
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+[2026-05-06 18:51:31] DONE ckd / logistic_regression in 22.1s (24 features)
+[2026-05-06 18:51:31] === ckd / svm (n_repeats=10) ===
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+[2026-05-06 18:51:54] DONE ckd / svm in 23.6s (24 features)
+[2026-05-06 18:51:54] === ckd / random_forest (n_repeats=10) ===
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+[2026-05-06 18:53:18] DONE ckd / random_forest in 83.9s (24 features)
+[2026-05-06 18:53:18] === ckd / mlp (n_repeats=10) ===
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+[2026-05-06 18:53:41] DONE ckd / mlp in 23.1s (24 features)
+[2026-05-06 18:53:41] === ckd / xgboost (n_repeats=10) ===
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+[2026-05-06 18:54:08] DONE ckd / xgboost in 26.7s (24 features)
+[2026-05-06 18:54:08] === ckd / catboost (n_repeats=10) ===
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+[2026-05-06 18:54:33] DONE ckd / catboost in 25.1s (24 features)
+[2026-05-06 18:54:33] SKIP ckd / tabpfn (option C)
+[2026-05-06 18:54:33] saved /home/wh2757/Clinical-Risk-Prediction-on-Small-Medical-Datasets/results/permutation_importance.csv  rows=541
+[2026-05-06 18:54:33] saved /home/wh2757/Clinical-Risk-Prediction-on-Small-Medical-Datasets/results/feature_consensus.csv  rows=85
+[2026-05-06 18:54:41] saved /home/wh2757/Clinical-Risk-Prediction-on-Small-Medical-Datasets/figures/perm_importance_heart.pdf
+[2026-05-06 18:54:42] saved /home/wh2757/Clinical-Risk-Prediction-on-Small-Medical-Datasets/figures/perm_importance_pima.pdf
+[2026-05-06 18:54:43] saved /home/wh2757/Clinical-Risk-Prediction-on-Small-Medical-Datasets/figures/perm_importance_breast_cancer.pdf
+[2026-05-06 18:54:44] saved /home/wh2757/Clinical-Risk-Prediction-on-Small-Medical-Datasets/figures/perm_importance_liver.pdf
+[2026-05-06 18:54:44] saved /home/wh2757/Clinical-Risk-Prediction-on-Small-Medical-Datasets/figures/perm_importance_ckd.pdf
+[2026-05-06 18:54:44] total runtime: 2399.8s
+PERMUTATION IMPORTANCE DONE

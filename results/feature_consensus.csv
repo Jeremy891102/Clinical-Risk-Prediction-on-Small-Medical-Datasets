@@ -1,0 +1,86 @@
+dataset,feature,n_models_top3,n_models,fraction,models
+breast_cancer,worst texture,5,6,0.833,"logistic_regression,svm,random_forest,xgboost,catboost"
+breast_cancer,worst area,2,6,0.333,"random_forest,xgboost"
+breast_cancer,worst concave points,2,6,0.333,"random_forest,xgboost"
+breast_cancer,area error,1,6,0.167,catboost
+breast_cancer,mean concave points,1,6,0.167,svm
+breast_cancer,mean fractal dimension,1,6,0.167,mlp
+breast_cancer,mean radius,1,6,0.167,mlp
+breast_cancer,mean texture,1,6,0.167,logistic_regression
+breast_cancer,radius error,1,6,0.167,logistic_regression
+breast_cancer,worst perimeter,1,6,0.167,catboost
+breast_cancer,worst radius,1,6,0.167,mlp
+breast_cancer,worst smoothness,1,6,0.167,svm
+breast_cancer,compactness error,0,6,0.0,
+breast_cancer,concave points error,0,6,0.0,
+breast_cancer,concavity error,0,6,0.0,
+breast_cancer,fractal dimension error,0,6,0.0,
+breast_cancer,mean area,0,6,0.0,
+breast_cancer,mean compactness,0,6,0.0,
+breast_cancer,mean concavity,0,6,0.0,
+breast_cancer,mean perimeter,0,6,0.0,
+breast_cancer,mean smoothness,0,6,0.0,
+breast_cancer,mean symmetry,0,6,0.0,
+breast_cancer,perimeter error,0,6,0.0,
+breast_cancer,smoothness error,0,6,0.0,
+breast_cancer,symmetry error,0,6,0.0,
+breast_cancer,texture error,0,6,0.0,
+breast_cancer,worst compactness,0,6,0.0,
+breast_cancer,worst concavity,0,6,0.0,
+breast_cancer,worst fractal dimension,0,6,0.0,
+breast_cancer,worst symmetry,0,6,0.0,
+ckd,sg,6,6,1.0,"logistic_regression,svm,random_forest,mlp,xgboost,catboost"
+ckd,hemo,5,6,0.833,"logistic_regression,svm,random_forest,xgboost,catboost"
+ckd,al,3,6,0.5,"svm,mlp,xgboost"
+ckd,sc,3,6,0.5,"logistic_regression,random_forest,catboost"
+ckd,su,1,6,0.167,mlp
+ckd,age,0,6,0.0,
+ckd,ane,0,6,0.0,
+ckd,appet,0,6,0.0,
+ckd,ba,0,6,0.0,
+ckd,bgr,0,6,0.0,
+ckd,bp,0,6,0.0,
+ckd,bu,0,6,0.0,
+ckd,cad,0,6,0.0,
+ckd,dm,0,6,0.0,
+ckd,htn,0,6,0.0,
+ckd,pc,0,6,0.0,
+ckd,pcc,0,6,0.0,
+ckd,pcv,0,6,0.0,
+ckd,pe,0,6,0.0,
+ckd,pot,0,6,0.0,
+ckd,rbc,0,6,0.0,
+ckd,rbcc,0,6,0.0,
+ckd,sod,0,6,0.0,
+ckd,wbcc,0,6,0.0,
+heart,ca,7,7,1.0,"logistic_regression,svm,random_forest,mlp,xgboost,catboost,tabpfn"
+heart,cp,7,7,1.0,"logistic_regression,svm,random_forest,mlp,xgboost,catboost,tabpfn"
+heart,thal,7,7,1.0,"logistic_regression,svm,random_forest,mlp,xgboost,catboost,tabpfn"
+heart,age,0,7,0.0,
+heart,chol,0,7,0.0,
+heart,exang,0,7,0.0,
+heart,fbs,0,7,0.0,
+heart,oldpeak,0,7,0.0,
+heart,restecg,0,7,0.0,
+heart,sex,0,7,0.0,
+heart,slope,0,7,0.0,
+heart,thalach,0,7,0.0,
+heart,trestbps,0,7,0.0,
+liver,DB,5,7,0.714,"logistic_regression,random_forest,mlp,xgboost,tabpfn"
+liver,Sgpt,5,7,0.714,"logistic_regression,svm,random_forest,catboost,tabpfn"
+liver,Age,4,7,0.571,"mlp,xgboost,catboost,tabpfn"
+liver,Alkphos,3,7,0.429,"random_forest,xgboost,catboost"
+liver,ALB,2,7,0.286,"logistic_regression,svm"
+liver,Gender,1,7,0.143,mlp
+liver,TP,1,7,0.143,svm
+liver,A/G Ratio,0,7,0.0,
+liver,Sgot,0,7,0.0,
+liver,TB,0,7,0.0,
+pima,mass,7,7,1.0,"logistic_regression,svm,random_forest,mlp,xgboost,catboost,tabpfn"
+pima,plas,7,7,1.0,"logistic_regression,svm,random_forest,mlp,xgboost,catboost,tabpfn"
+pima,age,4,7,0.571,"random_forest,xgboost,catboost,tabpfn"
+pima,preg,3,7,0.429,"logistic_regression,svm,mlp"
+pima,insu,0,7,0.0,
+pima,pedi,0,7,0.0,
+pima,pres,0,7,0.0,
+pima,skin,0,7,0.0,
