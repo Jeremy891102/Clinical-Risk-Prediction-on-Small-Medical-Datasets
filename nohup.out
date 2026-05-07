@@ -1,0 +1,82 @@
+
+=== heart × tabpfn (seed 42) ===
+Heart Disease (Cleveland): 303 samples, 13 features, class balance = 0.46
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+  fold 0: AUROC=0.924  F1=0.828  fit=1.4s  params={}
+  fold 1: AUROC=0.987  F1=0.929  fit=0.2s  params={}
+  fold 2: AUROC=0.887  F1=0.815  fit=0.2s  params={}
+  fold 3: AUROC=0.896  F1=0.800  fit=0.2s  params={}
+  fold 4: AUROC=0.946  F1=0.800  fit=0.2s  params={}
+  fold 5: AUROC=0.857  F1=0.769  fit=0.2s  params={}
+  fold 6: AUROC=0.978  F1=0.833  fit=0.2s  params={}
+  fold 7: AUROC=0.866  F1=0.714  fit=0.2s  params={}
+  fold 8: AUROC=0.955  F1=0.880  fit=0.2s  params={}
+  fold 9: AUROC=0.857  F1=0.769  fit=0.2s  params={}
+Saved results/raw/heart_tabpfn_seed42.json
+
+=== pima × tabpfn (seed 42) ===
+Pima Diabetes: 768 samples, 8 features, class balance = 0.35
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+  fold 0: AUROC=0.877  F1=0.692  fit=0.2s  params={}
+  fold 1: AUROC=0.841  F1=0.609  fit=0.2s  params={}
+  fold 2: AUROC=0.802  F1=0.571  fit=0.4s  params={}
+  fold 3: AUROC=0.937  F1=0.739  fit=0.2s  params={}
+  fold 4: AUROC=0.860  F1=0.609  fit=0.2s  params={}
+  fold 5: AUROC=0.855  F1=0.640  fit=0.2s  params={}
+  fold 6: AUROC=0.844  F1=0.596  fit=0.2s  params={}
+  fold 7: AUROC=0.835  F1=0.632  fit=0.2s  params={}
+  fold 8: AUROC=0.873  F1=0.679  fit=0.2s  params={}
+  fold 9: AUROC=0.744  F1=0.560  fit=0.2s  params={}
+Saved results/raw/pima_tabpfn_seed42.json
+
+=== breast_cancer × tabpfn (seed 42) ===
+Breast Cancer Wisconsin: 569 samples, 30 features, class balance = 0.63
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+  fold 0: AUROC=1.000  F1=1.000  fit=0.2s  params={}
+  fold 1: AUROC=1.000  F1=0.986  fit=0.2s  params={}
+  fold 2: AUROC=1.000  F1=0.986  fit=0.2s  params={}
+  fold 3: AUROC=0.999  F1=0.973  fit=0.2s  params={}
+  fold 4: AUROC=0.980  F1=0.986  fit=0.2s  params={}
+  fold 5: AUROC=0.992  F1=0.986  fit=0.2s  params={}
+  fold 6: AUROC=1.000  F1=1.000  fit=0.2s  params={}
+  fold 7: AUROC=1.000  F1=0.986  fit=0.2s  params={}
+  fold 8: AUROC=1.000  F1=0.986  fit=0.2s  params={}
+  fold 9: AUROC=1.000  F1=1.000  fit=0.2s  params={}
+Saved results/raw/breast_cancer_tabpfn_seed42.json
+
+=== liver × tabpfn (seed 42) ===
+Indian Liver Patient: 583 samples, 10 features, class balance = 0.71
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+  fold 0: AUROC=0.843  F1=0.840  fit=0.2s  params={}
+  fold 1: AUROC=0.768  F1=0.816  fit=0.2s  params={}
+  fold 2: AUROC=0.865  F1=0.857  fit=0.4s  params={}
+  fold 3: AUROC=0.668  F1=0.833  fit=0.2s  params={}
+  fold 4: AUROC=0.738  F1=0.842  fit=0.2s  params={}
+  fold 5: AUROC=0.756  F1=0.845  fit=0.2s  params={}
+  fold 6: AUROC=0.792  F1=0.839  fit=0.2s  params={}
+  fold 7: AUROC=0.625  F1=0.729  fit=0.2s  params={}
+  fold 8: AUROC=0.769  F1=0.812  fit=0.2s  params={}
+  fold 9: AUROC=0.779  F1=0.842  fit=0.2s  params={}
+Saved results/raw/liver_tabpfn_seed42.json
+
+=== ckd × tabpfn (seed 42) ===
+Chronic Kidney Disease: 400 samples, 24 features, class balance = 0.62
+TabPFN checkpoint: /home/wh2757/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt
+  fold 0: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 1: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 2: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 3: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 4: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 5: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 6: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 7: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 8: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+  fold 9: AUROC=1.000  F1=1.000  fit=0.3s  params={}
+Saved results/raw/ckd_tabpfn_seed42.json
+
+=== Summary ===
+           heart                tabpfn        ok  AUROC=0.915±0.050  (17.0s)
+            pima                tabpfn        ok  AUROC=0.847±0.050  (12.4s)
+   breast_cancer                tabpfn        ok  AUROC=0.997±0.006  (12.4s)
+           liver                tabpfn        ok  AUROC=0.760±0.072  (12.7s)
+             ckd                tabpfn        ok  AUROC=1.000±0.000  (13.3s)
