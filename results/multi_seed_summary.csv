@@ -1,0 +1,15 @@
+dataset,model,n_seeds,auroc_seed42,auroc_4seed_mean,auroc_4seed_std,delta_vs_seed42,rank_4seed,rank_seed42,rank_change
+heart,tabpfn,4,0.9154,0.9134,0.0046,-0.002,1,1,0
+heart,random_forest,4,0.907,0.9056,0.002,-0.0014,2,3,1
+heart,logistic_regression,4,0.9068,0.9053,0.0045,-0.0014,3,4,1
+heart,svm,4,0.9028,0.9033,0.0063,0.0005,4,6,2
+heart,catboost,4,0.9098,0.9013,0.0098,-0.0086,5,2,-3
+heart,xgboost,4,0.8976,0.8966,0.0019,-0.001,6,7,1
+heart,mlp,4,0.9044,0.8965,0.0088,-0.0078,7,5,-2
+pima,tabpfn,4,0.8469,0.8463,0.0023,-0.0006,1,1,0
+pima,catboost,4,0.8427,0.8375,0.0045,-0.0051,2,2,0
+pima,random_forest,4,0.8374,0.8334,0.0058,-0.004,3,4,1
+pima,xgboost,4,0.8407,0.8333,0.0059,-0.0074,4,3,-1
+pima,logistic_regression,4,0.8322,0.8322,0.002,-0.0001,5,5,0
+pima,svm,4,0.8294,0.8317,0.0034,0.0023,6,7,1
+pima,mlp,4,0.8317,0.8263,0.0096,-0.0054,7,6,-1
