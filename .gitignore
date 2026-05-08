@@ -10,3 +10,4 @@ results/*.json
 .idea/
 .vscode/
 logs/
+.claude/
