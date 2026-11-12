@@ -20,6 +20,18 @@
 
 [Raw fold scores](results/raw/) · [Detailed protocol & limitations](docs/benchmark.md) · [Existing analysis figures](figures/)
 
+## Repository layout
+
+```text
+src/           Data loaders, models, and evaluation
+experiments/   Experiment entry points
+scripts/       Analysis, plotting, and verification
+tests/         Automated checks
+results/       Archived scores and derived summaries
+figures/       Analysis PDFs and README charts
+docs/          Protocol and archived research notes
+```
+
 ## Reproduce
 
 ```bash

@@ -11,8 +11,8 @@ catboost / random_forest at AUROC ≈ 0.76). This script digs into:
 
 Outputs:
     results/liver_error_analysis.md
-    results/figures/liver_class_dist.pdf
-    results/figures/liver_error_overlap_heatmap.pdf
+    figures/liver_class_dist.pdf
+    figures/liver_error_overlap_heatmap.pdf
     results/tables/liver_feature_discriminability.csv
     results/tables/liver_per_class_metrics.csv
     results/tables/liver_error_jaccard.csv
@@ -36,7 +36,7 @@ from src.data.registry import DATASET_REGISTRY, get_dataset
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "results" / "raw"
-FIGURES_DIR = ROOT / "results" / "figures"
+FIGURES_DIR = ROOT / "figures"
 TABLES_DIR = ROOT / "results" / "tables"
 
 MODELS = [
@@ -248,7 +248,7 @@ def main():
         f"- Positive rate: **{y_liver.mean():.3f}** "
         f"(majority class = positive at {max(y_liver.mean(), 1-y_liver.mean()):.3f})",
         f"- N positive: {int(y_liver.sum())}, N negative: {int((1-y_liver).sum())}",
-        "- See `results/figures/liver_class_dist.pdf`.",
+        "- See `figures/liver_class_dist.pdf`.",
         "",
         "## 2. Feature discriminability",
         "Sorted by mutual information; Mann-Whitney U two-sided p-values shown alongside.",

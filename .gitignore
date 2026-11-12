@@ -11,3 +11,12 @@ results/*.json
 .vscode/
 logs/
 .claude/
+
+# Generated training artifacts and local state
+catboost_info/
+.ipynb_checkpoints/
+*.log
+nohup.out
+.env
+.env.*
+!.env.example

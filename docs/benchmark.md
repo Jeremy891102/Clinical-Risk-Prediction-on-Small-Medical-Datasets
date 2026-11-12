@@ -96,8 +96,8 @@ pytest tests/ -k "not tabpfn"
   TabPFN tests requiring that access.
 - XGBoost may require OpenMP (`libomp.dylib`) on macOS.
 - Maintained code lives in `src/data/`, `src/models/`, and `src/evaluation/`.
-  `scripts/task*.py` contain additional analyses. Top-level `run.py` and legacy
-  `src/*.py` files are early planning stubs.
+  `scripts/task*.py` contain additional analyses. Figures are written to
+  `figures/`; raw scores and derived summaries live under `results/`.
 - The final course report is maintained separately in Overleaf; a public report
   PDF is not included here.
 - Historical verification recorded on 2026-05-08: the non-TabPFN subset had

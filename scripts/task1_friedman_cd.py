@@ -7,8 +7,8 @@ Outputs:
     results/tables/friedman_nemenyi_auroc.csv  -- pairwise Nemenyi p-values
     results/tables/friedman_nemenyi_brier.csv  -- pairwise Nemenyi p-values
     results/tables/avg_ranks.csv               -- mean ranks per model for both metrics
-    results/figures/cd_diagram_auroc.pdf       -- CD plot (AUROC)
-    results/figures/cd_diagram_brier.pdf       -- CD plot (Brier)
+    figures/cd_diagram_auroc.pdf       -- CD plot (AUROC)
+    figures/cd_diagram_brier.pdf       -- CD plot (Brier)
 
 Standard Demšar (2006) recipe:
   1. Per-dataset rank classifiers (1 = best).
@@ -31,7 +31,7 @@ from scipy.stats import friedmanchisquare, rankdata, studentized_range
 
 ROOT = Path(__file__).resolve().parent.parent
 TABLES_DIR = ROOT / "results" / "tables"
-FIGURES_DIR = ROOT / "results" / "figures"
+FIGURES_DIR = ROOT / "figures"
 RAW_DIR = ROOT / "results" / "raw"
 ALPHA = 0.05
 

@@ -6,8 +6,8 @@ full dataset, then compute calibration metrics without any re-fitting.
 
 Inputs:  results/raw/{heart,pima}_{model}_seed42.json
 Outputs:
-    results/figures/reliability_heart.pdf
-    results/figures/reliability_pima.pdf
+    figures/reliability_heart.pdf
+    figures/reliability_pima.pdf
     results/tables/ece_per_model.csv  (dataset, model, ECE, Brier, n_samples)
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ from matplotlib.lines import Line2D
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "results" / "raw"
-FIGURES_DIR = ROOT / "results" / "figures"
+FIGURES_DIR = ROOT / "figures"
 TABLES_DIR = ROOT / "results" / "tables"
 
 DATASETS = ["heart", "pima"]

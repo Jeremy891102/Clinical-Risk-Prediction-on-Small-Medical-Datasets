@@ -1,3 +1,5 @@
+> **Historical notes:** Preserved from the original project. Some interpretations and paths are outdated; see [the current benchmark protocol](../benchmark.md) for verified results and limitations.
+
 # ML Final Project — Results & Findings
 
 > A self-contained walkthrough of what I built, what I found, and where the project currently stands. Everything you need to review is in this document — you don't need to open the CSVs or run any code.

@@ -5,7 +5,7 @@ Single seed (42), 10-fold nested CV, OOF predictions for n=583 samples.
 ## 1. Class balance
 - Positive rate: **0.714** (majority class = positive at 0.714)
 - N positive: 416, N negative: 167
-- See `results/figures/liver_class_dist.pdf`.
+- See `figures/liver_class_dist.pdf`.
 
 ## 2. Feature discriminability
 Sorted by mutual information; Mann-Whitney U two-sided p-values shown alongside.
