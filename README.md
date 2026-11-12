@@ -2,8 +2,6 @@
 
 **7 models · 5 small clinical datasets · nested cross-validation**
 
-Independent project by **Jeremy Hsu** — data preparation, model pipelines, experiments, and analysis. Originally developed for NYU DS-GA 1003.
-
 ## Objective
 
 **Does a tabular foundation model outperform classical ML when clinical datasets contain only 303–768 samples?** Compare discrimination (AUROC) and probability quality (Brier score), then check stability across seeds.
